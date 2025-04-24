@@ -1,15 +1,15 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { GradientButton } from "./gradient-button"
 import { cn } from "@/lib/utils"
+import { AlignRight, X } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Education", href: "#education" },
-  { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
   { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
@@ -17,40 +17,38 @@ const navItems = [
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState("home")
-  const [scrolled, setScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+
+  // Handle clicking outside to close menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [mobileMenuOpen])
 
   // Handle scrolling and active section highlighting
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section")
-      const scrollPosition = window.scrollY + 100 // Offset for better UX
-
-      // Set navbar background when scrolled
-      if (window.scrollY > 20) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-
-      // Determine active section
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop
-        const sectionHeight = section.offsetHeight
-        const sectionId = section.getAttribute("id")
-
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight &&
-          sectionId
-        ) {
-          setActiveSection(sectionId)
-        }
-      })
+      setIsScrolled(window.scrollY > 50)
     }
 
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Initial check
-
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -71,6 +69,7 @@ export function Navbar() {
       // Update URL without reload
       window.history.pushState(null, "", href)
       setActiveSection(targetId)
+      setMobileMenuOpen(false) // Close mobile menu after clicking
     }
   }
 
@@ -82,51 +81,45 @@ export function Navbar() {
   return (
     <nav 
       className={cn(
-        "fixed w-full z-50 transition-all duration-300 px-4 md:px-8 py-4",
-        scrolled 
-          ? "bg-gray-900/90 backdrop-blur-sm shadow-md" 
-          : "bg-transparent"
+        "fixed w-full z-50 transition-all duration-300",
+        isScrolled ? "bg-black/80 backdrop-blur-sm py-4" : "bg-transparent py-6"
       )}
     >
-      <div className="container mx-auto flex items-center justify-between">
-        {/* Left: Logo */}
-        <div className="flex-shrink-0">
-          <Link href="#home" onClick={(e) => scrollToSection(e, "#home")}>
-            <Image 
-              src="/SAS Transparent Logo.png" 
-              alt="Sudesh Arosha Seneviratne" 
-              width={150}
-              height={150}
-              className="object-contain"
-            />
-          </Link>
-        </div>
-        
-        {/* Middle: Navigation Items */}
-        <div className="hidden md:flex items-center justify-center flex-1 mx-4">
-          <ul className="flex space-x-8">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className={cn(
-                    "text-white/70 hover:text-white text-sm font-medium transition-colors duration-300",
-                    activeSection === item.href.substring(1) && "text-white font-bold"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        {/* Right: Download Resume Button */}
-        <div className="flex-shrink-0">
-          <GradientButton onClick={handleDownloadResume}>
-            Get Resume 
-          </GradientButton>
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex justify-between items-center">
+          <a href="#" className="text-2xl font-bold text-white">
+            Sudesh
+          </a>
+          <div className="hidden md:flex space-x-8">
+            <a 
+              href="#home"
+              onClick={(e) => scrollToSection(e, "#home")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Home
+            </a>
+            <a 
+              href="#education"
+              onClick={(e) => scrollToSection(e, "#education")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Education
+            </a>
+            <a 
+              href="#experience"
+              onClick={(e) => scrollToSection(e, "#experience")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Experience
+            </a>
+            <a 
+              href="#contact"
+              onClick={(e) => scrollToSection(e, "#contact")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </nav>
