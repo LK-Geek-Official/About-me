@@ -4,9 +4,13 @@ import { useEffect } from "react";
 import { Navbar } from "@/components/ui/navbar";
 import { Hero } from "@/components/ui/Hero";
 import { Education } from "@/components/ui/Education";
-import { Experience } from "@/components/ui/Experience";
-import { Contact } from "@/components/ui/Contact";
+import Experience from "@/components/ui/Experience";
+import { Projects } from "@/components/ui/Projects";
+import { Testimonials } from "@/components/ui/Testimonials";
+import { About } from "@/components/ui/About";
+import { Contact } from "@/components/ui/Connect";
 import { Footer } from "@/components/ui/Footer";
+import { UnderConstruction } from "@/components/ui/UnderConstruction";
 
 export default function Home() {
   // Add scroll animation functionality
@@ -33,10 +37,15 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen bg-black text-white">
+      <UnderConstruction isVisible={true} />
+      
       <Navbar />
       <Hero />
       <Education />
       <Experience />
+      <Projects />
+      <Testimonials />
+      <About />
       <Contact />
       <Footer />
     </main>

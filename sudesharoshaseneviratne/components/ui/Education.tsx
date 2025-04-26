@@ -157,7 +157,7 @@ export const Education = () => {
                     </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Grades :</span>
-                      <span className="text-gray-300 ml-2">4A's, 3B's, 2B's</span>
+                      <span className="text-gray-300 ml-2">4A's, 3B's, 2C's</span>
                     </div>
                   </div>
                 </div>

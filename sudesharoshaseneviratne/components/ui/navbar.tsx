@@ -1,18 +1,16 @@
 "use client"
 
 import React, { useEffect, useState, useRef } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { GradientButton } from "./gradient-button"
 import { cn } from "@/lib/utils"
-import { AlignRight, X } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#home" },
-  { name: "Education", href: "#education" },
-  { name: "Experience", href: "#experience" },
+  { name: "Education & Certifications", href: "#education" },
+  { name: "Experience & Skills", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Connect", href: "#connect" },
 ]
 
 export function Navbar() {
@@ -103,21 +101,42 @@ export function Navbar() {
               onClick={(e) => scrollToSection(e, "#education")}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Education
+              Education & Certifications
             </a>
             <a 
               href="#experience"
               onClick={(e) => scrollToSection(e, "#experience")}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Experience
+              Experience & Skills
             </a>
             <a 
-              href="#contact"
-              onClick={(e) => scrollToSection(e, "#contact")}
+              href="#projects"
+              onClick={(e) => scrollToSection(e, "#projects")}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Contact
+              Projects
+            </a>
+            <a 
+              href="#testimonials"
+              onClick={(e) => scrollToSection(e, "#testimonials")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Testimonials
+            </a>
+            <a 
+              href="#about"
+              onClick={(e) => scrollToSection(e, "#about")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              About
+            </a>
+            <a 
+              href="#connect"
+              onClick={(e) => scrollToSection(e, "#connect")}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Connect
             </a>
           </div>
         </div>
