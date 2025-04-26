@@ -43,7 +43,7 @@ export default function Experience() {
     <section id="experience" className="min-h-screen py-20 bg-gray-900">
       <div className="container mx-auto px-4 md:px-8">
         <div className="section-fade-in">
-          <h2 className="text-4xl font-bold mb-12 text-center"><u>Experience & Skills</u></h2>
+          <h2 className="text-4xl font-bold mb-12 text-center"><u>Experience</u></h2>
           <Timeline data={timelineData} />
         </div>
       </div>

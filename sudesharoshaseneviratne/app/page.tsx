@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Navbar } from "@/components/ui/navbar";
 import { Hero } from "@/components/ui/Hero";
 import { Education } from "@/components/ui/Education";
+import { Skills } from "@/components/ui/Skills";
 import Experience from "@/components/ui/Experience";
 import { Projects } from "@/components/ui/Projects";
 import { Testimonials } from "@/components/ui/Testimonials";
@@ -37,12 +38,12 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen bg-black text-white">
-      <UnderConstruction isVisible={true} />
-      
+      <UnderConstruction isVisible={false} />
       <Navbar />
       <Hero />
       <Education />
       <Experience />
+      <Skills />
       <Projects />
       <Testimonials />
       <About />
