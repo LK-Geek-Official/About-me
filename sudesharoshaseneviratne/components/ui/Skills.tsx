@@ -137,26 +137,16 @@ export function Skills() {
     }
   ];
 
-  const getLevelWidth = (level: SkillLevel) => {
-    switch (level) {
-      case "Beginner": return "w-1/3";
-      case "Intermediate": return "w-2/3";
-      case "Advanced": return "w-full";
-      default: return "w-0";
-    }
-  };
-
-  const getLevelColor = (level: SkillLevel) => {
-    switch (level) {
-      case "Beginner": return "bg-yellow-500";
-      case "Intermediate": return "bg-blue-500";
-      case "Advanced": return "bg-green-500";
-      default: return "bg-gray-500";
-    }
+  const getProgressBarStyle = (level: SkillLevel) => {
+    const width = level === "Beginner" ? "33%" : level === "Intermediate" ? "66%" : "100%";
+    return {
+      width,
+      background: "linear-gradient(90deg, #4F46E5 0%, #7C3AED 50%, #DB2777 100%)"
+    };
   };
 
   return (
-    <section id="skills" className="min-h-screen py-20 bg-gray-900">
+    <section id="skills" className="min-h-screen py-20 bg-black">
       <div className="container mx-auto px-4 md:px-8">
         <div className="section-fade-in">
           <h2 className="text-4xl font-bold mb-12 text-center"><u>Skills & Technologies</u></h2>
@@ -169,7 +159,7 @@ export function Skills() {
                 onClick={() => setSelectedCategory(category.title)}
                 className={`px-6 py-3 rounded-full transition-all text-lg font-semibold
                   ${selectedCategory === category.title 
-                    ? 'bg-blue-600 text-white' 
+                    ? 'bg-indigo-600 text-white' 
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -180,7 +170,7 @@ export function Skills() {
           </div>
 
           {/* Skills Display */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-4xl mx-auto space-y-6">
             {skillCategories
               .find(cat => cat.title === selectedCategory)?.skills
               .map((skill, index) => (
@@ -189,25 +179,29 @@ export function Skills() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gray-800 p-6 rounded-lg"
+                  className="group"
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <Image
-                      src={skill.icon}
-                      alt={skill.name}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10"
-                    />
-                    <h3 className="text-xl font-semibold">{skill.name}</h3>
+                  <div className="flex items-center gap-6 mb-2">
+                    <div className="flex items-center gap-3 w-48">
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
+                      <span className="font-medium text-white">{skill.name}</span>
+                    </div>
+                    <div className="flex-1 relative h-2 bg-gray-800 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={getProgressBarStyle(skill.level)}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="absolute h-full rounded-full"
+                      />
+                    </div>
+                    <span className="text-sm text-gray-400 w-24">{skill.level}</span>
                   </div>
-                  <div className="relative h-3 bg-gray-700 rounded-full overflow-hidden">
-                    <div
-                      className={`absolute h-full rounded-full transition-all duration-500 ${getLevelColor(skill.level)} ${getLevelWidth(skill.level)}`}
-                      style={{ width: skill.level === "Beginner" ? "33.33%" : skill.level === "Intermediate" ? "66.66%" : "100%" }}
-                    />
-                  </div>
-                  <p className="text-sm text-gray-400 mt-2">{skill.level}</p>
                 </motion.div>
               ))}
           </div>

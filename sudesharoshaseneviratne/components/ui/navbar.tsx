@@ -4,8 +4,7 @@ import React, { useEffect, useState, useRef } from "react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "Education & Certifications", href: "#education" },
+  { name: "Education & Certification", href: "#education" },
   { name: "Experience & Skills", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Testimonials", href: "#testimonials" },
@@ -14,7 +13,7 @@ const navItems = [
 ]
 
 export function Navbar() {
-  const [activeSection, setActiveSection] = useState("home")
+  const [activeSection, setActiveSection] = useState("")
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -44,6 +43,29 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+
+      // Find which section is currently in view
+      const sections = [
+        { id: "education", nav: "Education & Certification" },
+        { id: "experience", nav: "Experience & Skills" },
+        { id: "projects", nav: "Projects" },
+        { id: "testimonials", nav: "Testimonials" },
+        { id: "about", nav: "About" },
+        { id: "connect", nav: "Connect" }
+      ]
+
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section.id)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom >= 100
+        }
+        return false
+      })
+
+      if (currentSection) {
+        setActiveSection(currentSection.id)
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -59,8 +81,9 @@ export function Navbar() {
     const element = document.getElementById(targetId)
     
     if (element) {
+      const offset = targetId === "education" || targetId === "experience" ? 0 : 80
       window.scrollTo({
-        top: element.offsetTop - 80, // Offset for navbar height
+        top: element.offsetTop - offset,
         behavior: "smooth",
       })
       
@@ -89,55 +112,19 @@ export function Navbar() {
             Sudesh
           </a>
           <div className="hidden md:flex space-x-8">
-            <a 
-              href="#home"
-              onClick={(e) => scrollToSection(e, "#home")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Home
-            </a>
-            <a 
-              href="#education"
-              onClick={(e) => scrollToSection(e, "#education")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Education & Certifications
-            </a>
-            <a 
-              href="#experience"
-              onClick={(e) => scrollToSection(e, "#experience")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Experience & Skills
-            </a>
-            <a 
-              href="#projects"
-              onClick={(e) => scrollToSection(e, "#projects")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Projects
-            </a>
-            <a 
-              href="#testimonials"
-              onClick={(e) => scrollToSection(e, "#testimonials")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Testimonials
-            </a>
-            <a 
-              href="#about"
-              onClick={(e) => scrollToSection(e, "#about")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              About
-            </a>
-            <a 
-              href="#connect"
-              onClick={(e) => scrollToSection(e, "#connect")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Connect
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
+                className={cn(
+                  "text-gray-300 hover:text-white transition-colors",
+                  activeSection === item.href.replace('#', '') && "text-white font-medium"
+                )}
+              >
+                {item.name}
+              </a>
+            ))}
           </div>
         </div>
       </div>

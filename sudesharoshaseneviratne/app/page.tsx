@@ -5,13 +5,14 @@ import { Navbar } from "@/components/ui/navbar";
 import { Hero } from "@/components/ui/Hero";
 import { Education } from "@/components/ui/Education";
 import { Skills } from "@/components/ui/Skills";
-import Experience from "@/components/ui/Experience";
+import { TimelineDemo as Experience } from "@/components/ui/Experience"; 
 import { Projects } from "@/components/ui/Projects";
 import { Testimonials } from "@/components/ui/Testimonials";
 import { About } from "@/components/ui/About";
 import { Contact } from "@/components/ui/Connect";
 import { Footer } from "@/components/ui/Footer";
 import { UnderConstruction } from "@/components/ui/UnderConstruction";
+import { Certification } from "@/components/ui/Certification";
 
 export default function Home() {
   // Add scroll animation functionality
@@ -41,13 +42,26 @@ export default function Home() {
       <UnderConstruction isVisible={false} />
       <Navbar />
       <Hero />
-      <Education />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Testimonials />
-      <About />
-      <Contact />
+      <div id="education" className="section-wrapper">
+        <Education />
+        <Certification />
+      </div>
+      <div id="experience" className="section-wrapper">
+        <Experience />
+        <Skills />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="connect">
+        <Contact />
+      </div>
       <Footer />
     </main>
   );

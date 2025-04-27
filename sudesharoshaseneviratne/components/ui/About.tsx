@@ -20,7 +20,7 @@ export const About = () => {
             <div className="space-y-6">
               <div className="relative w-64 h-64 mx-auto md:mx-0">
                 <Image
-                  src="/profile-photo.jpg"
+                  src="/profile picture.png"
                   alt="Profile Photo"
                   fill
                   className="rounded-full object-cover"
@@ -76,6 +76,8 @@ export const About = () => {
               </div>
             </div>
           </div>
+          <br />
+          <hr className="opacity-50" />
         </div>
       </div>
     </section>
