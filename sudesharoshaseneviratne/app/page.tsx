@@ -12,7 +12,7 @@ import { About } from "@/components/ui/About";
 import { Contact } from "@/components/ui/Connect";
 import { Footer } from "@/components/ui/Footer";
 import { UnderConstruction } from "@/components/ui/UnderConstruction";
-import { Certification } from "@/components/ui/Certification";
+import { Certifications } from "@/components/ui/Certifications";
 
 export default function Home() {
   // Add scroll animation functionality
@@ -44,7 +44,7 @@ export default function Home() {
       <Hero />
       <div id="education" className="section-wrapper">
         <Education />
-        <Certification />
+        <Certifications />
       </div>
       <div id="experience" className="section-wrapper">
         <Experience />

@@ -50,9 +50,9 @@ export const Education = () => {
                       <span className="text-gray-400">2023 - Present</span>
                     </div>
                     <p className="text-gray-300 mb-4">
-                      Specializing in Software Engineering with a focus on web technologies and distributed systems.
-                      Relevant coursework includes Data Structures & Algorithms, Database Systems, Web Development,
-                      and Software Engineering Principles.
+                      Currently pursuing a Bachelor’s degree in Software Engineering with a strong focus on 
+                      modern software development practices, algorithms, and system design. Gaining hands-on 
+                      experience in programming, problem-solving, and collaborative project work as part of the curriculum.
                     </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">GPA :</span>
@@ -62,9 +62,9 @@ export const Education = () => {
                 </div>
                 <button 
                   onClick={() => setSelectedEducation({
-                    title: "Bachelor of Science in Computer Science",
-                    institution: "University of Technology",
-                    image: "/education/bs-degree.png"
+                    title: "BEng (Hons) Software Engineering",
+                    institution: "University of Westminster - London, UK",
+                    image: "/education/certifications/university-results.png"
                   })}
                   className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
@@ -101,20 +101,22 @@ export const Education = () => {
                       <span className="text-gray-400">2020 - 2022</span>
                     </div>
                     <p className="text-gray-300 mb-4">
-                      Foundation in programming fundamentals, object-oriented design, and basic web development.
-                      Participated in coding competitions and collaborative projects.
+                    Completed A/Ls in the Technology Stream with a focus on <b>Science for Technology</b>, 
+                    <b>Bio-System Technology</b>, <b>Information & Communication Technology (ICT)</b>, <b>General English</b> and <b>General ICT</b>. <br />
+                    Developed a strong foundation in technical concepts, problem-solving, and digital literacy, 
+                    <br />preparing for further studies in software engineering.
                     </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Grades :</span>
-                      <span className="text-gray-300 ml-2">3S's</span>
+                      <span className="text-gray-300 ml-2">1C's,3S's</span>
                     </div>
                   </div>
                 </div>
                 <button 
                   onClick={() => setSelectedEducation({
-                    title: "Associate Degree in Programming",
-                    institution: "Community College of Technology",
-                    image: "/education/associate-degree.png"
+                    title: "G.C.E. Advanced Level (Technology Stream)",
+                    institution: "Bandaranayake Collage - Gampaha",
+                    image: "/education/certifications/al-result.jpg"
                   })}
                   className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
@@ -151,9 +153,7 @@ export const Education = () => {
                       <span className="text-gray-400">2014 - 2019</span>
                     </div>
                     <p className="text-gray-300 mb-4">
-                      Specializing in Software Engineering with a focus on web technologies and distributed systems.
-                      Relevant coursework includes Data Structures & Algorithms, Database Systems, Web Development,
-                      and Software Engineering Principles.
+                      Achieved 4A's, 3B's, and 2C's in the O/L examinations, demonstrating strong academic performance across key subjects. This foundation helped develop essential analytical and problem-solving skills, paving the way for advanced studies in technology and software engineering.
                     </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Grades :</span>
@@ -163,9 +163,9 @@ export const Education = () => {
                 </div>
                 <button 
                   onClick={() => setSelectedEducation({
-                    title: "Bachelor of Science in Computer Science",
-                    institution: "University of Technology",
-                    image: "/education/bs-degree.png"
+                    title: "G.C.E. Ordinary Level",
+                    institution: "Gurukula Collage - Kelaniya",
+                    image: "/education/certifications/ol-results.jpg"
                   })}
                   className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
@@ -202,9 +202,7 @@ export const Education = () => {
                       <span className="text-gray-400">2009 - 2013</span>
                     </div>
                     <p className="text-gray-300 mb-4">
-                      Specializing in Software Engineering with a focus on web technologies and distributed systems.
-                      Relevant coursework includes Data Structures & Algorithms, Database Systems, Web Development,
-                      and Software Engineering Principles.
+                      Achieved an outstanding score of 167/200 (83.5%) in the national scholarship examination, demonstrating strong academic potential from an early age. This accomplishment reflects my dedication to learning and problem-solving abilities, which later became the foundation for my technical education.
                     </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Marks :</span>

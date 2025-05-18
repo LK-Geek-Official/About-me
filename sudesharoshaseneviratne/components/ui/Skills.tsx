@@ -47,8 +47,8 @@ export function Skills() {
         { name: "Nuxt.js", level: "Beginner", icon: "/skills/nuxt.svg" },
         { name: "Tailwind CSS", level: "Intermediate", icon: "/skills/tailwind.svg" },
         { name: "Bootstrap", level: "Intermediate", icon: "/skills/bootstrap.svg" },
-        { name: "Framer Motion", level: "Intermediate", icon: "/skills/framer.svg" },
-        { name: "React Native", level: "Intermediate", icon: "/skills/react-native.svg" },
+        { name: "Framer Motion", level: "Intermediate", icon: "/" },
+        { name: "React Native", level: "Intermediate", icon: "/skills/react.svg" },
       ]
     },
     {
@@ -56,7 +56,7 @@ export function Skills() {
       icon: "/skills/database.svg",
       skills: [
         { name: "MySQL", level: "Beginner", icon: "/skills/mysql.svg" },
-        { name: "MongoDB", level: "Beginner", icon: "/skills/mongodb.svg" },
+        { name: "MongoDB", level: "Beginner", icon: "/" },
         { name: "Firebase", level: "Beginner", icon: "/skills/firebase.svg" },
         { name: "Supabase", level: "Beginner", icon: "/skills/supabase.svg" },
       ]
@@ -87,29 +87,28 @@ export function Skills() {
       skills: [
         { name: "Jira", level: "Beginner", icon: "/skills/jira.svg" },
         { name: "ClickUp", level: "Beginner", icon: "/skills/clickup.svg" },
-        { name: "Notion", level: "Beginner", icon: "/skills/notion.svg" },
-        { name: "MS 365", level: "Advanced", icon: "/skills/ms365.svg" },
-        { name: "Agile", level: "Beginner", icon: "/skills/ms365.svg" },
+        { name: "Notion", level: "Beginner", icon: "/" },
+        { name: "MS 365", level: "Advanced", icon: "/skills/microsoft-365.svg" },
       ]
     },
     {
       title: "Code Editors & IDEs",
       icon: "/skills/editor.svg",
       skills: [
-        { name: "VS Code", level: "Intermediate", icon: "/skills/vscode.svg" },
+        { name: "VS Code", level: "Intermediate", icon: "/skills/vs-code.svg" },
         { name: "IntelliJ IDEA", level: "Intermediate", icon: "/skills/intellij.svg" },
         { name: "PyCharm", level: "Intermediate", icon: "/skills/pycharm.svg" },
         { name: "Android Studio", level: "Beginner", icon: "/skills/android-studio.svg" },
         { name: "GitHub Codespaces", level: "Beginner", icon: "/skills/github.svg" },
-        { name: "CodeBlocks", level: "Intermediate", icon: "/skills/codeblocks.svg" },
+        { name: "CodeBlocks", level: "Intermediate", icon: "/skills/code-blocks.svg" },
       ]
     },
     {
       title: "AI Integrated DevOps Tools",
       icon: "/skills/ai.svg",
       skills: [
-        { name: "GitHub Copilot", level: "Intermediate", icon: "/skills/copilot.svg" },
-        { name: "Cursor AI", level: "Intermediate", icon: "/skills/cursor.svg" },
+        { name: "GitHub Copilot", level: "Intermediate", icon: "/skills/github-copilot.svg" },
+        { name: "Cursor AI", level: "Intermediate", icon: "/skills/cursor-ai.svg" },
         { name: "Windsurf", level: "Beginner", icon: "/skills/windsurf.svg" },
         { name: "Continue.dev", level: "Beginner", icon: "/skills/continue.svg" },
         { name: "V0 Dev", level: "Intermediate", icon: "/skills/v0.svg" },
@@ -128,7 +127,8 @@ export function Skills() {
         { name: "Anthropic", level: "Intermediate", icon: "/skills/anthropic.svg" },
         { name: "DeepSeek", level: "Intermediate", icon: "/skills/deepseek.svg" },
         { name: "Gemini", level: "Intermediate", icon: "/skills/gemini.svg" },
-        { name: "Microsoft Copilot", level: "Intermediate", icon: "/skills/gemini.svg" },
+        { name: "Liama", level: "Intermediate", icon: "/skills/meta.svg" },
+        { name: "Microsoft Copilot", level: "Intermediate", icon: "/skills/copilot.svg" },
         { name: "Blackbox.ai", level: "Intermediate", icon: "/skills/blackbox.svg" },
         { name: "Hugging Face", level: "Beginner", icon: "/skills/huggingface.svg" },
         { name: "Open Router", level: "Beginner", icon: "/skills/openrouter.svg" },
