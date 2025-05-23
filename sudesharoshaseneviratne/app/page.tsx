@@ -13,6 +13,7 @@ import { Contact } from "@/components/ui/Connect";
 import { Footer } from "@/components/ui/Footer";
 import { UnderConstruction } from "@/components/ui/UnderConstruction";
 import { Certifications } from "@/components/ui/Certifications";
+import Stats from "@/components/ui/Stats";
 
 export default function Home() {
   // Add scroll animation functionality
@@ -49,6 +50,9 @@ export default function Home() {
       <div id="experience" className="section-wrapper">
         <Experience />
         <Skills />
+      </div>
+      <div id="stats">
+        <Stats />
       </div>
       <div id="projects">
         <Projects />

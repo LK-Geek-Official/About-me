@@ -5,6 +5,7 @@ export const Footer = () => {
     <footer className="bg-black py-8 text-center">
       <div className="container mx-auto px-4">
         <p className="text-gray-300">© {new Date().getFullYear()} Sudesh Arosha Seneviratne. All rights reserved.</p>
+        <p className="text-gray-300">Built with Next.js ^15.2.4</p>
         <div className="flex justify-center gap-6 mt-4">
           <a href="#" className="text-gray-300 hover:text-white">
             GitHub

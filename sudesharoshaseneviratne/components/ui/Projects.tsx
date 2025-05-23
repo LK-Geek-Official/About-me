@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Monitor, Code2, Smartphone, Palette } from 'lucide-react';
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 interface Project {
   title: string;
@@ -18,7 +19,7 @@ interface Project {
 interface ProjectCategories {
   Web: Project[];
   Mobile: Project[];
-  Backend: Project[];
+  Desktop: Project[];
   "UI/UX": Project[];
 }
 
@@ -32,7 +33,7 @@ export const Projects = () => {
   const navItems = [
     { name: 'Web', url: '#', icon: Monitor },
     { name: 'Mobile', url: '#', icon: Smartphone },
-    { name: 'Backend', url: '#', icon: Code2 },
+    { name: 'Desktop', url: '#', icon: Code2 },
     { name: 'UI/UX', url: '#', icon: Palette }
   ];
 
@@ -55,13 +56,69 @@ export const Projects = () => {
         live: "https://lkgeekofficial.com"
       },
       {
-        title: "E-commerce Platform",
+        title: "Prasanthi Crafts",
         description: "Modern e-commerce platform with real-time inventory management",
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
-        github: "https://github.com/example/ecommerce",
+        github: "https://github.com/Prasanthi-Crafts",
+        live: "https://prasanthicraftslk.com"
+      },
+      {
+        title: "Arosha Distributors",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "https://github.com/Arosha-Distributors-Pvt-Ltd",
+        live: "https://arosha-distributors.vercel.app/"
+      },
+      {
+        title: "Arosha Electrical Works",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "https://github.com/Arosha-Electrical-Works-Pvt-Ltd",
+        live: "https://arosha-electrical-works.vercel.app/"
+      },
+      {
+        title: "Long Distance Bust Tracking System",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "https://github.com/LDBTS-LK",
         live: "#"
-      }
+      },
+      {
+        title: "Report Now LK",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "https://github.com/Report-Now-LK",
+        live: "#"
+      },
+      {
+        title: "Rock, Paper, Scissors Game",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "#",
+        live: "#"
+      },
+      {
+        title: "Hand Cricket Game",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "#",
+        live: "#"
+      },
+      {
+        title: "Zero Hunger",
+        description: "Modern e-commerce platform with real-time inventory management",
+        image: "/projects/portfolio.png",
+        technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
+        github: "#",
+        live: "#"
+      },
     ],
     Mobile: [
       {
@@ -89,7 +146,7 @@ export const Projects = () => {
         live: "#"
       }
     ],
-    Backend: [
+    Desktop: [
       {
         title: "Microservices Architecture",
         description: "Scalable microservices system with service mesh",
@@ -144,7 +201,7 @@ export const Projects = () => {
   };
 
   return (
-    <section className="py-6 bg-black text-white">
+    <section className="py-6 bg-black text-white justify-between">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold mb-12 text-center"><u>Projects</u></h2>
@@ -157,60 +214,61 @@ export const Projects = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 ">
           {allProjects[activeTab].map((project: Project, index: number) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="group bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="aspect-video relative overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  priority={index < 3}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech: string, i: number) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+            <div key={`${activeTab}-${project.title}-${index}`} className="border-2 border-white rounded-lg">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="group bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    priority={index < 3}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-6 ">
+                  <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech: string, i: number) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 transition-colors"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      GitHub
+                    </a>
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 transition-colors"
+                    >
+                      Live Demo
+                    </a>
+                  </div>
                 </div>
-                <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Live Demo
-                  </a>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           ))}
         </div>
       </div>

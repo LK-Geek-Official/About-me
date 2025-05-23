@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sudesh Arosha Seneviratne | Portfolio",
-  description: "Personal portfolio website of Sudesh Arosha Seneviratne",
+  title: "Sudesh Arosha Seneviratne",
+  description: "Sudesh Arosha Seneviratne",
 };
 
 export default function RootLayout({

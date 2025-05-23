@@ -45,15 +45,10 @@ export const Education = () => {
                     <div className="flex justify-between items-start">
                       <div>
                         <h3 className="text-xl font-bold mb-1">BEng (Hons) Software Engineering</h3>
-                        <h4 className="text-lg text-gray-300 mb-2"><i>Informatics Institute of Technology in collaboration with University of Westminster</i></h4>
+                        <h4 className="text-lg text-gray-300 mb-2"><i>Informatics Institute of Technology <br />in collaboration with <br /> University of Westminster</i></h4>
                       </div>
                       <span className="text-gray-400">2023 - Present</span>
                     </div>
-                    <p className="text-gray-300 mb-4">
-                      Currently pursuing a Bachelor’s degree in Software Engineering with a strong focus on 
-                      modern software development practices, algorithms, and system design. Gaining hands-on 
-                      experience in programming, problem-solving, and collaborative project work as part of the curriculum.
-                    </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">GPA :</span>
                       <span className="text-gray-300 ml-2">Still not completed the degree</span>
@@ -100,12 +95,6 @@ export const Education = () => {
                       </div>
                       <span className="text-gray-400">2020 - 2022</span>
                     </div>
-                    <p className="text-gray-300 mb-4">
-                    Completed A/Ls in the Technology Stream with a focus on <b>Science for Technology</b>, 
-                    <b>Bio-System Technology</b>, <b>Information & Communication Technology (ICT)</b>, <b>General English</b> and <b>General ICT</b>. <br />
-                    Developed a strong foundation in technical concepts, problem-solving, and digital literacy, 
-                    <br />preparing for further studies in software engineering.
-                    </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Grades :</span>
                       <span className="text-gray-300 ml-2">1C's,3S's</span>
@@ -116,7 +105,7 @@ export const Education = () => {
                   onClick={() => setSelectedEducation({
                     title: "G.C.E. Advanced Level (Technology Stream)",
                     institution: "Bandaranayake Collage - Gampaha",
-                    image: "/education/certifications/al-result.jpg"
+                    image: "/education/certifications/al-results.png"
                   })}
                   className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
@@ -152,9 +141,6 @@ export const Education = () => {
                       </div>
                       <span className="text-gray-400">2014 - 2019</span>
                     </div>
-                    <p className="text-gray-300 mb-4">
-                      Achieved 4A's, 3B's, and 2C's in the O/L examinations, demonstrating strong academic performance across key subjects. This foundation helped develop essential analytical and problem-solving skills, paving the way for advanced studies in technology and software engineering.
-                    </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Grades :</span>
                       <span className="text-gray-300 ml-2">4A's, 3B's, 2C's</span>
@@ -196,14 +182,11 @@ export const Education = () => {
                   <div className="flex-grow">
                     <div className="flex justify-between items-start">
                       <div>
-                        <h3 className="text-xl font-bold mb-1">Primary School - Scholarship Examination</h3>
+                        <h3 className="text-xl font-bold mb-1">Scholarship Examination</h3>
                         <h4 className="text-lg text-gray-300 mb-2"><i>Sri Sidhartha Kumara Maha Vidyalaya - Gampaha</i></h4>
                       </div>
                       <span className="text-gray-400">2009 - 2013</span>
                     </div>
-                    <p className="text-gray-300 mb-4">
-                      Achieved an outstanding score of 167/200 (83.5%) in the national scholarship examination, demonstrating strong academic potential from an early age. This accomplishment reflects my dedication to learning and problem-solving abilities, which later became the foundation for my technical education.
-                    </p>
                     <div className="flex items-center">
                       <span className="text-gray-300 font-semibold">Marks :</span>
                       <span className="text-gray-300 ml-2">167 / 200 (83.5%)</span>
