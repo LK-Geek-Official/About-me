@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FancyHeading } from "./FancyHeading";
 
 type SkillLevel = "Beginner" | "Intermediate" | "Advanced";
 
@@ -18,7 +19,7 @@ interface SkillCategory {
   skills: Skill[];
 }
 
-export function Skills() {
+export const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("Programming Languages");
 
   const skillCategories: SkillCategory[] = [
@@ -146,11 +147,10 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="min-h-screen py-20 bg-black">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="py-16 bg-black text-white">
+      <div className="container mx-auto px-4">
+        <FancyHeading title="Skills & Technologies" />
         <div className="section-fade-in">
-          <h2 className="text-4xl font-bold mb-12 text-center"><u>Skills & Technologies</u></h2>
-          
           {/* Category Selection */}
           <div className="flex flex-wrap gap-4 justify-center mb-12">
             {skillCategories.map((category) => (
@@ -209,4 +209,4 @@ export function Skills() {
       </div>
     </section>
   );
-} 
+}; 

@@ -30,7 +30,7 @@ export function UnderConstruction({ isVisible = true }: UnderConstructionProps) 
           transition={{ delay: 0.4 }}
           className="text-4xl font-bold text-white mb-4"
         >
-          Under Construction
+          Under Maintenence
         </motion.h2>
         <motion.p
           initial={{ y: 20, opacity: 0 }}

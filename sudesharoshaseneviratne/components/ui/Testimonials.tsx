@@ -1,6 +1,7 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { FancyHeading } from "./FancyHeading";
 
-export function Testimonials() {
+export const Testimonials = () => {
   const testimonials = [
     {
       quote:
@@ -38,5 +39,12 @@ export function Testimonials() {
       src: "/testimonials/pasidu.jpg",
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
-}
+  return (
+    <section className="py-16 bg-black text-white">
+      <div className="container mx-auto px-4">
+        <FancyHeading title="Testimonials" />
+        <AnimatedTestimonials testimonials={testimonials} />
+      </div>
+    </section>
+  );
+};

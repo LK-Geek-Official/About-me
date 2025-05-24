@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import { FancyHeading } from "./FancyHeading";
 
-export function TimelineDemo() {
+export const TimelineDemo = () => {
   const data = [
 
     {
@@ -133,10 +134,11 @@ export function TimelineDemo() {
   ];
 
   return (
-    <div className="min-h-screen w-full py-10 px-4">
-      <div className="container mx-auto">
+    <section className="py-16 bg-black text-white">
+      <div className="container mx-auto px-4">
+        <FancyHeading title="Experience" />
         <Timeline data={data} />
       </div>
-    </div>
+    </section>
   );
-}
+};

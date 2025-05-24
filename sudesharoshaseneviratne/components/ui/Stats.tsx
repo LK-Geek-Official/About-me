@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaProjectDiagram, FaClock, FaStar, FaCertificate } from "react-icons/fa";
+import { FancyHeading } from "./FancyHeading";
 
 const stats = [
   {
@@ -38,12 +39,12 @@ const Stats = () => {
   return (
     <section className="bg-black text-white py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center"><u>My Stats</u></h2>
+        <FancyHeading title="My Stats" />
         
         {/* Main content container with flex */}
         <div className="flex justify-center items-start gap-8 mb-12">
           {/* Left side - Stats with icons */}
-          <div className="flex flex-col gap-4 w-1/3">
+          <div className="flex flex-col gap-8.5 w-1/3">
             {stats.map((stat, idx) => (
               <div
                 key={idx}

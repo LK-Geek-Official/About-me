@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Modal } from "./Modal";
+import { FancyHeading } from "./FancyHeading";
 
 interface Certification {
   title: string;
@@ -61,42 +62,42 @@ export const Certifications = () => {
     ],
     competitions: [
       {
-        title: "Meta Front-End Developer Professional Certificate",
-        issuer: "Meta (Facebook)",
-        date: "Issued: 2024",
+        title: "Hult Prize 2024-2025 On-Campus Semi-Finals Program",
+        issuer: "Hult Prize IIT",
+        date: "Issued: Feb 2025",
         image: "/certifications/meta-cert.png",
-        logo: "/certifications/meta-logo.png",
-        skills: ["React", "JavaScript", "HTML", "CSS", "Version Control", "UX/UI"],
-        link: "https://www.coursera.org/account/accomplishments/professional-cert/..."
+        logo: "/education/hult-prize.jpeg",
+        skills: [],
+        link: "https://www.linkedin.com/posts/sudesharoshaseneviratne_hultprize-colossusai-innovation-activity-7309984172549292032-6IL1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdUuFIBMaxbIONVwG5hGWHMXTt0W_yUFqc"
       },
-      {
-        title: "Google UX Design Professional Certificate",
-        issuer: "Google",
-        date: "Issued: 2023",
-        image: "/certifications/google-ux-cert.png",
-        logo: "/certifications/google-logo.png",
-        skills: ["Figma", "UX Research", "Wireframing", "Prototyping"],
-        link: "https://www.coursera.org/account/accomplishments/professional-cert/..."
-      }
     ],
     workshops: [
       {
-        title: "Meta Front-End Developer Professional Certificate",
-        issuer: "Meta (Facebook)",
-        date: "Issued: 2024",
+        title: "Building AI Agents and Apps with Azure AI Foundry",
+        issuer: "STYAVA.DEV",
+        date: "Issued: Mar 2025",
         image: "/certifications/meta-cert.png",
-        logo: "/certifications/meta-logo.png",
-        skills: ["React", "JavaScript", "HTML", "CSS", "Version Control", "UX/UI"],
-        link: "https://www.coursera.org/account/accomplishments/professional-cert/..."
+        logo: "/education/styava-dev.jpeg",
+        skills: ["Azure", "AI"],
+        link: "https://www.linkedin.com/posts/sudesharoshaseneviratne_ai-machinelearning-azureai-activity-7309953028516679681-RBHS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdUuFIBMaxbIONVwG5hGWHMXTt0W_yUFqc"
       },
       {
-        title: "Google UX Design Professional Certificate",
-        issuer: "Google",
-        date: "Issued: 2023",
+        title: "Participation Certification of Create an Agent with Copilot Studio",
+        issuer: "Microsoft Learn Student Ambassadors - Sri Lanka",
+        date: "Issued: Mar 2025",
         image: "/certifications/google-ux-cert.png",
-        logo: "/certifications/google-logo.png",
-        skills: ["Figma", "UX Research", "Wireframing", "Prototyping"],
-        link: "https://www.coursera.org/account/accomplishments/professional-cert/..."
+        logo: "/education/microsoft-student-ambassador.jpeg",
+        skills: ["Copilot Studio", "Copilot", "AI"],
+        link: "https://www.linkedin.com/posts/sudesharoshaseneviratne_ai-copilotstudio-microsoftteams-activity-7309979221500534791-zuCJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdUuFIBMaxbIONVwG5hGWHMXTt0W_yUFqc"
+      },
+      {
+        title: "Skillup 3.0 Industry Survival Certificate of Participation",
+        issuer: "Leo Club of IIT",
+        date: "Issued: Mar 2025",
+        image: "/certifications/google-ux-cert.png",
+        logo: "/education/leo-club.jpeg",
+        skills: [],
+        link: "https://www.linkedin.com/posts/sudesharoshaseneviratne_skillup-lifelonglearning-leoclubofiit-activity-7309968796054601728-_3mQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdUuFIBMaxbIONVwG5hGWHMXTt0W_yUFqc"
       }
     ],
     educational: [
@@ -142,29 +143,30 @@ export const Certifications = () => {
   };
 
   const categories = [
-    { id: "technical", label: "Technical", color: "blue" },
-    { id: "competitions", label: "Competitions", color: "green" },
-    { id: "workshops", label: "Workshops", color: "purple" },
-    { id: "educational", label: "Educational", color: "yellow" },
-    { id: "extraCurricular", label: "Extra-Curricular", color: "red" }
+    { id: "technical", label: "Technical" },
+    { id: "competitions", label: "Competitions" },
+    { id: "workshops", label: "Workshops" },
+    { id: "educational", label: "Educational" },
+    { id: "extraCurricular", label: "Extra-Curricular" }
   ] as const;
 
   return (
-    <section id="certifications" className="min-h-screen py-20 bg-gray-900">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="py-16 bg-black text-white">
+      <div className="container mx-auto px-4">
+        <FancyHeading title="Certifications" />
         <div className="section-fade-in">
-          <h2 className="text-4xl font-bold mb-12 text-center text-white"><u>Certifications</u></h2>
+          
           
           {/* Category Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map(({ id, label, color }) => (
+            {categories.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => setActiveCategory(id as Category)}
                 className={`px-6 py-3 rounded-full text-sm font-semibold transition-all
                   ${activeCategory === id 
-                    ? `bg-${color}-500/80 text-white` 
-                    : `bg-gray-800/50 hover:bg-gray-700/70 text-${color}-400`
+                    ? `bg-zinc-500/80 text-white` 
+                    : `bg-zinc-900 hover:bg-zinc-900 text-zinc-400`
                   }`}
               >
                 {label}
@@ -218,7 +220,7 @@ const CertificationCard = ({
 }) => {
   return (
     <div 
-      className="bg-gray-800/50 rounded-lg p-6 hover:bg-gray-800/70 transition-all"
+      className="bg-zinc-900 rounded-lg p-6 hover:bg-zinc-800 transition-all"
     >
       <div className="flex items-start gap-4">
         {/* Logo */}

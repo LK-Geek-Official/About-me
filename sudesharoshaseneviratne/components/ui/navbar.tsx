@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState, useRef } from "react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const navItems = [
   { name: "Education & Certification", href: "#education" },
   { name: "Experience & Skills", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "About", href: "#about" },
   { name: "Connect", href: "#connect" },
 ]
 
@@ -50,7 +50,6 @@ export function Navbar() {
         { id: "experience", nav: "Experience & Skills" },
         { id: "projects", nav: "Projects" },
         { id: "testimonials", nav: "Testimonials" },
-        { id: "about", nav: "About" },
         { id: "connect", nav: "Connect" }
       ]
 
@@ -103,13 +102,21 @@ export function Navbar() {
     <nav 
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-black/80 backdrop-blur-sm py-4" : "bg-transparent py-6"
+        isScrolled ? 
+          "bg-black/80 backdrop-blur-sm py-4 border-b border-cyan-500/30 shadow-[0_0_15px_rgba(255,255,255,0.1)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-cyan-500/50 after:to-transparent" 
+          : "bg-transparent py-6 z-50"
       )}
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-white">
-            Sudesh
+            <Image 
+              src="/SAS Transparent Logo.png" 
+              alt="SAS Logo"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
           </a>
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (

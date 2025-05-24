@@ -6,6 +6,7 @@ import { Monitor, Code2, Smartphone, Palette } from 'lucide-react';
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
+import { FancyHeading } from "./FancyHeading";
 
 interface Project {
   title: string;
@@ -14,6 +15,7 @@ interface Project {
   technologies: string[];
   github: string;
   live: string;
+  inProgress?: boolean;
 }
 
 interface ProjectCategories {
@@ -45,15 +47,17 @@ export const Projects = () => {
         image: "/projects/colossusai.png",
         technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Python"],
         github: "https://github.com/Colossus-AI-Learning-Guide-System",
-        live: "https://www.colossusai.net"
+        live: "https://www.colossusai.net",
+        inProgress: false
       },
       {
         title: "LK Geek Official",
         description: "Technology news and community platform",
         image: "/projects/lkgeekofficial.png",
-        technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+        technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "MongoDB"],
         github: "https://github.com/LK-Geek-Official",
-        live: "https://lkgeekofficial.com"
+        live: "https://lkgeekofficial.com",
+        inProgress: false
       },
       {
         title: "Prasanthi Crafts",
@@ -61,7 +65,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "https://github.com/Prasanthi-Crafts",
-        live: "https://prasanthicraftslk.com"
+        live: "https://prasanthicraftslk.com",
+        inProgress: true
       },
       {
         title: "Arosha Distributors",
@@ -69,7 +74,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "https://github.com/Arosha-Distributors-Pvt-Ltd",
-        live: "https://arosha-distributors.vercel.app/"
+        live: "https://arosha-distributors.vercel.app/",
+        inProgress: true
       },
       {
         title: "Arosha Electrical Works",
@@ -77,7 +83,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "https://github.com/Arosha-Electrical-Works-Pvt-Ltd",
-        live: "https://arosha-electrical-works.vercel.app/"
+        live: "https://arosha-electrical-works.vercel.app/",
+        inProgress: true
       },
       {
         title: "Long Distance Bust Tracking System",
@@ -85,7 +92,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "https://github.com/LDBTS-LK",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Report Now LK",
@@ -93,7 +101,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "https://github.com/Report-Now-LK",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Rock, Paper, Scissors Game",
@@ -101,7 +110,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "#",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Hand Cricket Game",
@@ -109,7 +119,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "#",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Zero Hunger",
@@ -117,7 +128,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Next.js", "React", "Stripe", "MongoDB", "Redis"],
         github: "#",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
     ],
     Mobile: [
@@ -127,7 +139,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["React Native", "Firebase", "Redux", "TypeScript"],
         github: "https://github.com/example/fitness-app",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Social Media App",
@@ -135,7 +148,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Flutter", "Firebase", "GetX", "WebRTC"],
         github: "https://github.com/example/social-app",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Food Delivery App",
@@ -143,7 +157,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["React Native", "Node.js", "MongoDB", "Socket.io"],
         github: "https://github.com/example/food-delivery",
-        live: "#"
+        live: "#",
+        inProgress: true
       }
     ],
     Desktop: [
@@ -153,7 +168,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Node.js", "Kubernetes", "Docker", "gRPC"],
         github: "https://github.com/example/microservices",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Real-time Analytics Engine",
@@ -161,7 +177,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Python", "Apache Kafka", "Elasticsearch", "Redis"],
         github: "https://github.com/example/analytics-engine",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Cloud Infrastructure",
@@ -169,7 +186,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["AWS", "Terraform", "Jenkins", "Ansible"],
         github: "https://github.com/example/cloud-infra",
-        live: "#"
+        live: "#",
+        inProgress: true
       }
     ],
     "UI/UX": [
@@ -179,7 +197,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Figma", "React", "Storybook", "Styled Components"],
         github: "https://github.com/example/design-system",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Mobile Banking App",
@@ -187,7 +206,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Sketch", "InVision", "Principle", "Zeplin"],
         github: "https://github.com/example/banking-app-design",
-        live: "#"
+        live: "#",
+        inProgress: true
       },
       {
         title: "Healthcare Dashboard",
@@ -195,7 +215,8 @@ export const Projects = () => {
         image: "/projects/portfolio.png",
         technologies: ["Figma", "Adobe XD", "Protopie", "Analytics"],
         github: "https://github.com/example/healthcare-dashboard",
-        live: "#"
+        live: "#",
+        inProgress: true
       }
     ]
   };
@@ -204,7 +225,7 @@ export const Projects = () => {
     <section className="py-6 bg-black text-white justify-between">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-bold mb-12 text-center"><u>Projects</u></h2>
+          <FancyHeading title="Projects" />
           <div className="flex justify-center w-full">
             <NavBar 
               items={navItems} 
@@ -214,26 +235,37 @@ export const Projects = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
           {allProjects[activeTab].map((project: Project, index: number) => (
-            <div key={`${activeTab}-${project.title}-${index}`} className="border-2 border-white rounded-lg">
+            <div key={`${activeTab}-${project.title}-${index}`} className="border-2 border-gray-600 rounded-lg bg-zinc-800 min-h-[400px]">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="group bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="group bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative"
               >
+                {project.inProgress && (
+                  <div className="absolute inset-0 z-10 backdrop-blur-xl bg-black/10 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="inline-block px-4 py-2 border-2 border-cyan-500 rounded-lg">
+                        <span className="text-xl font-bold bg-gradient-to-r from-cyan-500 to-white bg-clip-text text-transparent animate-pulse">
+                          Will Update Soon
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="aspect-video relative overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    className={`object-cover transition-transform duration-300 ${!project.inProgress && 'group-hover:scale-110'}`}
                     priority={index < 3}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
-                <div className="p-6 ">
+                <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
@@ -242,7 +274,7 @@ export const Projects = () => {
                     {project.technologies.map((tech: string, i: number) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+                        className="px-3 py-1 bg-zinc-800 text-gray-300 rounded-full text-sm"
                       >
                         {tech}
                       </span>
@@ -253,7 +285,7 @@ export const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      className={`text-primary hover:text-primary/80 transition-colors ${project.inProgress && 'pointer-events-none opacity-50'}`}
                     >
                       GitHub
                     </a>
@@ -261,7 +293,7 @@ export const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      className={`text-primary hover:text-primary/80 transition-colors ${project.inProgress && 'pointer-events-none opacity-50'}`}
                     >
                       Live Demo
                     </a>

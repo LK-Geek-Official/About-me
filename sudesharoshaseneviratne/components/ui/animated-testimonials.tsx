@@ -54,7 +54,7 @@ export function AnimatedTestimonials({ testimonials, autoplay = false, className
   return (
     <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-6", className)}>
     <h2 className="text-4xl font-bold mb-12 text-center"><u>Testimonials</u></h2>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20 z-10">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>

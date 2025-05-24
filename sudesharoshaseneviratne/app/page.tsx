@@ -60,9 +60,6 @@ export default function Home() {
       <div id="testimonials">
         <Testimonials />
       </div>
-      <div id="about">
-        <About />
-      </div>
       <div id="connect">
         <Contact />
       </div>

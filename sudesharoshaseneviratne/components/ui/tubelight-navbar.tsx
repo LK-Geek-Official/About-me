@@ -39,11 +39,11 @@ export function NavBar({ items, className, onTabChange }: NavBarProps) {
   return (
     <nav
       className={cn(
-        "z-50",
+        "z-10",
         className
       )}
     >
-      <div className="relative flex items-center gap-3 bg-gray-900/50 border border-gray-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
+      <div className="relative flex items-center gap-3 bg-zinc-900 border border-gray-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -72,7 +72,7 @@ export function NavBar({ items, className, onTabChange }: NavBarProps) {
                     damping: 30
                   }}
                 >
-                  <div className="absolute inset-0 bg-gray-800 rounded-full" />
+                  <div className="absolute inset-0 bg-zinc-800 rounded-full" />
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-full">
                     <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-lg -top-2 -left-2" />
                     <div className="absolute w-8 h-6 bg-primary/20 rounded-full blur-lg -top-1" />
